@@ -1,5 +1,9 @@
 import { PluginEntrypoint } from 'nexus/plugin'
 import { Settings } from './settings'
+import { Headers } from 'cross-fetch';
+
+// @ts-ignore
+global.Headers = global.Headers || Headers;
 
 export const auth: PluginEntrypoint<Settings, 'required'> = settings => ({
   settings,
